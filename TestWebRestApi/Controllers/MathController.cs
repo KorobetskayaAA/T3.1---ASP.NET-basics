@@ -11,7 +11,7 @@ namespace TestWebRestApi.Controllers
     [ApiController]
     public class MathController : ControllerBase
     {
-        [HttpGet("sum")]
+        [HttpGet("sum2")]
         public double GetSum(double a, double b)
         {
             return a + b;
@@ -44,7 +44,7 @@ namespace TestWebRestApi.Controllers
 
         [HttpPost("/circle")]
         [HttpPost("circle")]
-        public object PostCircle([FromBody] double radius)
+        public object PostCircle([FromForm] double radius)
         {
             return GetCircle(radius);
         }

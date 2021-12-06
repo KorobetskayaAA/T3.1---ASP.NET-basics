@@ -17,7 +17,7 @@ namespace TestWebRestApi.Model
         }
 
         public Note() { 
-            Id = new Guid().ToString();
+            Id = Guid.NewGuid().ToString();
             Created = DateTime.Now;
         }
     }

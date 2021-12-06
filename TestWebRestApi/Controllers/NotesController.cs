@@ -31,11 +31,10 @@ namespace TestWebRestApi.Controllers
 
         // POST api/<NotesController>
         [HttpPost]
-        public ActionResult Post([FromBody] string noteText)
+        public ActionResult Post([FromBody] Note newNote)
         {
-            var newNote = new Note(noteText);
             Notes.Add(newNote);
-            return Ok(newNote);
+            return Ok(newNote); // 200
         }
 
         // PUT api/<NotesController>/5
@@ -45,7 +44,7 @@ namespace TestWebRestApi.Controllers
             var noteToUpdate = Notes.FirstOrDefault(n => n.Id == note.Id);
             if (noteToUpdate == null)
             {
-                return NotFound("Заметка с таким id не найдена.");
+                return NotFound("Заметка с таким id не найдена."); // 404
             }
             noteToUpdate.Created = note.Created;
             noteToUpdate.Text = note.Text;
@@ -59,10 +58,10 @@ namespace TestWebRestApi.Controllers
             var noteToDelete = Notes.FirstOrDefault(n => n.Id == id);
             if (noteToDelete == null)
             {
-                return NotFound("Заметка с таким id не найдена.");
+                return NotFound("Заметка с таким id не найдена."); // 404
             }
             Notes.Remove(noteToDelete);
-            return Ok();
+            return Ok(); // 200
         }
     }
 }

@@ -20,7 +20,7 @@
     "TestWebRestApi": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "notes",
+      "launchUrl": "api/notes",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
